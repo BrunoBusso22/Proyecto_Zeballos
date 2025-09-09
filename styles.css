@@ -77,18 +77,29 @@ ul li a:hover { background-color: rgb(255, 255, 255);
     color: #ffffff;
     grid-template-columns: 1fr , 1fr;
     gap: 30px;
-     max-width: 800px;   /* límite de ancho */
-      margin: 0 auto;     /* centrar el grid */
-      padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
-.caja{
-     border: 2px solid #ffffff; 
-    transition: 0.2s; 
+.caja {
+    border: 2px solid #ffffff; 
+    transition: 0.3s; 
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
     text-align: center;
-    
 }
-a{
-    text-decoration: none;
+.caja:hover {
+    background-color: #ffffff;
+    border-color: rgb(79, 83, 197);
+    transform: scale(1.05);
+    color: #8c8c8c;
+}
+.caja a {
     color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block; 
+    padding: 15px;
+}
+.caja:hover a {
+    color: #8c8c8c;
 }
