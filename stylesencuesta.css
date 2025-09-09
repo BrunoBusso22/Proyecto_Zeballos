@@ -37,3 +37,30 @@ ul li a:hover {
     background-color: rgb(255, 255, 255); 
     border-color: rgb(79, 83, 197); 
     transform: scale(1.05); } 
+h1{
+    color: #ffffff;
+    font-size: 70px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    text-align: center;
+}
+h2{
+    color:#e100ff;
+    font-size: 40px;
+}
+form{
+  display: flex;
+  align-items: center; /* centra verticalmente */
+  margin-bottom: 10px;
+}
+
+form label {
+  width: 200px; /* mismo ancho para todos los labels */
+  text-align: right; /* los alinea a la derecha */
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+form input {
+  flex: 1; /* hace que todos los inputs ocupen el mismo espacio */
+}
