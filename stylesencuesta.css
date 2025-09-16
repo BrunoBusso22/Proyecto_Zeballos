@@ -6,7 +6,9 @@ body{
     font-family: "Orbitron", sans-serif; 
     font-optical-sizing: auto; 
     font-weight: 400;
-    font-style: normal
+    font-style: normal;
+    
+    
  } 
  ul { list-style: none; 
     font-size: 20px; 
@@ -47,7 +49,24 @@ h1{
 h2{
     color:#e100ff;
     font-size: 35px;
+    
 }
+.titulo-resultado {
+  display: flex;
+  align-items: center;   /* alinea verticalmente */
+  gap: 15px;             /* espacio entre título y resultado */
+}
+
+.titulo-resultado h2 {
+  margin: 0;             /* que no meta saltos extra */
+}
+
+#resultado {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -69,12 +88,46 @@ form input {
   width: 100%;
 }
 button {
-  background-color: #000000;
-  color: white;
-  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #e100ff;
+  padding: 20px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 250px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  font-size: 22px;
+  font-family: "Orbitron", sans-serif;   
+  font-optical-sizing: auto; 
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+  transition: 1.2s;
+}
+select{
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 250px;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;   
+  font-optical-sizing: auto; 
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold
+}
+button:hover{
+  transform: scale(1.1);
+  background-color: #e100ff;
+  color: #ffffff;
+}
+option{
+  background-color: rgb(255, 255, 255);
+  transition: 1s;
+}
+option:hover{
+  background-color: #838383;
+
 }

@@ -17,27 +17,95 @@
             <li><a href="recursos.html">Recursos y Aprendizaje</a></li>
             <li><a href="agiles.html">Metodologias Agiles</a></li> 
             <li><a href="nosotros.html">Sobre Nosotros</a></li> 
-            <li><a href="encuestas.html">Encuesta</a></li>   
+            <li><a href="comparador.html">Comparador<br> de Metodologias</a></li>   
              <li><a href="../Inicio.html">Inicio</a></li>
         </ul>
     </nav>
     <h1>Encuesta de Preferencias Metodológicas</h1>
 <div class="Encuesta">
+    <div class="titulo-resultado">
     <h2>completa la siguiente encuesta:</h2>
+    <span id="resultado"></span>
+</div>
+<form id="formulario">
+  <label for="tamaño">Tamaño de Proyecto:</label>
+  <select id="tamaño" name="tamaño" required>
+    <option value="">-- Selecciona --</option>
+    <option value="pequeño">Pequeño</option>
+    <option value="mediano">Mediano</option>
+    <option value="grande">Grande</option>
+  </select>
+  <br><br>
 
-    <form>
-        <label for="tamaño">Tamaño de Proyecto:</label>
-        <input type="text" id="tamaño" name="tamaño" required><br><br>
-        <label for="complejidad">Complejidad del sistema:</label>
-        <input type="text" id="complejidad" name="complejidad" required><br><br>
-        <label for="requisitos">Requisitos del cliente:</label>
-        <input type="text" id="requisitos" name="requisitos" required><br><br>
-        <label for="entrega">Plazos de entrega:</label>
-        <input type="text" id="entrega" name="entrega" required><br><br>
-        <label for="equipo">Equipo de Trabajo:</label>
-        <input type="text" id="equipo" name="equipo" required><br><br>
-        <button type="submit">Enviar</button>
-    </form>
-</div>  
+  <label for="complejidad">Complejidad del sistema:</label>
+  <select id="complejidad" name="complejidad" required>
+    <option value="">-- Selecciona --</option>
+    <option value="baja">Baja</option>
+    <option value="media">Media</option>
+    <option value="alta">Alta</option>
+  </select>
+  <br><br>
+
+  <label for="requisitos">Requisitos del cliente:</label>
+  <select id="requisitos" name="requisitos" required>
+    <option value="">-- Selecciona --</option>
+    <option value="claros">Claros</option>
+    <option value="cambiantes">Cambiantes</option>
+    <option value="inciertos">Inciertos</option>
+  </select>
+  <br><br>
+
+  <label for="entrega">Plazos de entrega:</label>
+  <select id="entrega" name="entrega" required>
+    <option value="">-- Selecciona --</option>
+    <option value="corto">Corto</option>
+    <option value="moderado">Moderado</option>
+    <option value="largo">Largo</option>
+  </select>
+  <br><br>
+
+  <label for="equipo">Equipo de Trabajo:</label>
+  <select id="equipo" name="equipo" required>
+    <option value="">-- Selecciona --</option>
+    <option value="pequeño">Pequeño</option>
+    <option value="mediano">Mediano</option>
+    <option value="grande">Grande</option>
+  </select>
+  <br><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
+</div> 
+<script>
+  const form = document.getElementById("formulario");
+  const resultado = document.getElementById("resultado");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+
+    const tamaño = document.getElementById("tamaño").value;
+    const complejidad = document.getElementById("complejidad").value;
+    const requisitos = document.getElementById("requisitos").value;
+    const entrega = document.getElementById("entrega").value;
+    const equipo = document.getElementById("equipo").value;
+
+    let recomendacion = "";
+
+  
+    if (tamaño === "pequeño" && complejidad === "baja" && requisitos === "claros") {
+      recomendacion = "Te conviene usar Modelo en Cascada (simple y lineal).";
+    } else if (tamaño === "mediano" && requisitos === "cambiantes") {
+      recomendacion = "Te conviene usar Metodología Ágil (Scrum, Kanban).";
+    } else if (tamaño === "grande" && complejidad === "alta" && equipo === "grande") {
+      recomendacion = "Te conviene usar Modelo en Espiral (manejo de riesgos).";
+    } else {
+      recomendacion = "Podés combinar metodologías según tu proyecto.";
+    }
+
+    resultado.textContent = recomendacion;
+  });
+</script> 
 </body>
 </html>
