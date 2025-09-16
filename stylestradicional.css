@@ -48,7 +48,7 @@ ul li a:hover {
     min-width: 250px;
     max-width: 100%;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 75px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     color: #000000;
     word-break: break-word;
@@ -76,10 +76,12 @@ ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #e5e2e28a;
 }
 
 .tradicional {
-    background: #48ca2e;
+    background: #ffffff;
+    border: 3px solid #48ca2e;
 }
 
 .tradicional ul li {
@@ -87,7 +89,8 @@ ul li a:hover {
 }
 
 .agil {
-  background: #d40a0a;
+  background: #ffffff;
+  border: 3px solid #d21616;
 }
 
 .agil ul li {
