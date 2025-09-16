@@ -53,21 +53,22 @@ h2{
 }
 .titulo-resultado {
   display: flex;
-  align-items: center;   /* alinea verticalmente */
-  gap: 15px;             /* espacio entre título y resultado */
+  align-items: center; 
+  gap: 15px;             
 }
 
 .titulo-resultado h2 {
-  margin: 0;             /* que no meta saltos extra */
+  margin: 0;             
 }
 
 #resultado {
   color: #ffffff;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
 }
 
 form {
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   width: 300px;
