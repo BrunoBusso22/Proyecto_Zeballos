@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
+
 </head>
 <body>
      <nav>
@@ -18,7 +19,7 @@
             <li><a href="recursos.html">Recursos y Aprendizaje</a></li>
             <li><a href="agiles.html">Metodologias Agiles</a></li> 
             <li><a href="nosotros.html">Sobre Nosotros</a></li> 
-            <li><a href="encuestas.html">Encuesta</a></li>   
+            <li><a href="encuesta.html">Encuesta</a></li>   
              <li><a href="../Inicio.html">Inicio</a></li>
         </ul>
 
@@ -29,25 +30,107 @@
         <div class="imagencamino">
           <img src="../imagenes/caminos.png">
         </div>
-        <div class="containerDer">
-            <h1>Comparador de metodologias</h1>
-            <div class="botones">
-                <div class="botonn">
-                        <a class="boton" href="agiles.html">Metodologia Agil</a>
-                                   
-                </div >
-                <div class="botonn">
-                        <a class="boton" href="tradicionales.html">Metodologia Tradicional</a>
-    
-                </div>
-            </div>
-            <p>
-            En los siguientes enlaces encontrarás una descripción detallada de las metodologías de
-            desarrollo de software, tanto Ágil como Tradicional. Cada sección presenta sus principales
-            características, ventajas y limitaciones, con el fin de facilitar la comprensión y permitir una
-            comparación objetiva entre ambas.
-            </p>
+        <div class="comparador">
+          <h2>Comparador de Metodologías de Desarrollo</h2>
+          <label for="m1">Metodología 1:</label>
+          <select id="m1"></select>
+          <label for="m2">Metodología 2:</label>
+          <select id="m2"></select>
+          <button onclick="comparar()">Comparar</button>
+          <div id="resultado"></div>
         </div>
     </div>
+    <script>
+    const metodologias = {
+      "Cascada": {
+        "Enfoque": "Lineal y secuencial.",
+        "Roles": "Jerárquicos (analistas, programadores, testers).",
+        "Estructura": "Fases rígidas (requisitos, diseño, implementación, pruebas).",
+        "Flexibilidad": "Muy baja, cambios costosos.",
+        "Documentación": "Extensa y obligatoria.",
+        "Entrega": "Al final del proyecto.",
+        "Gestión de cambios": "Difícil y costosa."
+      },
+      "Modelo en V": {
+        "Enfoque": "Lineal con verificación en cada fase.",
+        "Roles": "Jerárquicos con énfasis en testers.",
+        "Estructura": "Fases rígidas pero con validación y verificación en paralelo.",
+        "Flexibilidad": "Muy baja, cambios difíciles.",
+        "Documentación": "Muy detallada (pruebas documentadas).",
+        "Entrega": "Al final, pero con pruebas en cada fase.",
+        "Gestión de cambios": "Difícil, requiere retrabajo."
+      },
+      "Espiral": {
+        "Enfoque": "Iterativo con análisis de riesgos.",
+        "Roles": "Gerente de proyecto, equipo técnico, cliente.",
+        "Estructura": "Ciclos en espiral con planificación, desarrollo y evaluación de riesgos.",
+        "Flexibilidad": "Media, permite ajustes en cada ciclo.",
+        "Documentación": "Moderada, depende del ciclo.",
+        "Entrega": "Entregas por ciclos, incrementales.",
+        "Gestión de cambios": "Prevista en cada iteración."
+      },
+      "Scrum": {
+        "Enfoque": "Iterativo e incremental por sprints.",
+        "Roles": "Product Owner, Scrum Master, Equipo de desarrollo.",
+        "Estructura": "Sprints con reuniones diarias y entregas incrementales.",
+        "Flexibilidad": "Alta, adaptable a cambios frecuentes.",
+        "Documentación": "Reducida, enfocada en lo esencial.",
+        "Entrega": "Entregas frecuentes al final de cada sprint.",
+        "Gestión de cambios": "Gestionada en cada sprint."
+      },
+      "Kanban": {
+        "Enfoque": "Flujo continuo, basado en tableros.",
+        "Roles": "Equipo de desarrollo y responsable de tareas.",
+        "Estructura": "Tablero visual (To Do, Doing, Done).",
+        "Flexibilidad": "Alta, ajustes constantes al flujo.",
+        "Documentación": "Mínima, más visual que escrita.",
+        "Entrega": "Entregas continuas según flujo.",
+        "Gestión de cambios": "Muy flexible, cambios inmediatos en el tablero."
+      },
+      "XP": {
+        "Enfoque": "Iterativo, centrado en buenas prácticas.",
+        "Roles": "Programadores, cliente, coach, testers.",
+        "Estructura": "Ciclos cortos con prácticas como pair programming y TDD.",
+        "Flexibilidad": "Alta, diseñada para cambios continuos.",
+        "Documentación": "Ligera, con foco en el código y pruebas automáticas.",
+        "Entrega": "Ligera, con foco en el código y pruebas automáticas.",
+        "Gestión de cambios": "Parte central del proceso, cambios aceptados en cada ciclo."
+      }
+    };
+
+    // Cargar las opciones en los selects
+    const m1 = document.getElementById("m1");
+    const m2 = document.getElementById("m2");
+    for (let nombre in metodologias) {
+      let opt1 = document.createElement("option");
+      opt1.value = nombre;
+      opt1.textContent = nombre;
+      m1.appendChild(opt1);
+
+      let opt2 = document.createElement("option");
+      opt2.value = nombre;
+      opt2.textContent = nombre;
+      m2.appendChild(opt2);
+    }
+
+    // Función para comparar
+    function comparar() {
+      let sel1 = m1.value;
+      let sel2 = m2.value;
+
+      if (sel1 === sel2) {
+        document.getElementById("resultado").innerHTML = "<p>Elegí dos metodologías diferentes.</p>";
+        return;
+      }
+
+      let tabla = "<table><tr><th>Característica</th><th>" + sel1 + "</th><th>" + sel2 + "</th></tr>";
+      for (let caracteristica in metodologias[sel1]) {
+        tabla += "<tr><td>" + caracteristica + "</td><td>" + metodologias[sel1][caracteristica] + "</td><td>" + metodologias[sel2][caracteristica] + "</td></tr>";
+      }
+      tabla += "</table>";
+
+      document.getElementById("resultado").innerHTML = tabla;
+    }
+  </script>
 </body>
 </html>

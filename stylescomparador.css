@@ -47,7 +47,7 @@ ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 120px; 
+    gap: 80px;
     padding: 40px;
     padding-top: 100px;
 }
@@ -90,4 +90,70 @@ p{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+    select, button { margin: 10px; padding: 5px; border-radius: 20px; }
+    button { padding: 10px; background-color: #ffffff; color: black; border: 2px solid #ffffff; cursor: pointer; transition: 0.3s;font-weight: bold; }
+    button:hover { transform : scale(1.1); color: rgba(118, 115, 115, 0.188); }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+    th { background-color: #000000; }
+.comparador {
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 1.35rem;
+    padding: 50px 60px; 
+    border-radius: 20px;
+    background: rgba(0,0,0,0.35);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.comparador h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.comparador label {
+    font-size: 1.2rem;
+    margin: 15px 0 5px 0;
+}
+
+.comparador select, .comparador button {
+    font-size: 1.15rem;
+    padding: 12px 22px;
+    border-radius: 20px;
+    margin: 12px 0;
+}
+
+.comparador button {
+    font-weight: bold;
+}
+
+.comparador table {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-top: 30px;
+}
+
+.comparador th, .comparador td {
+    padding: 14px 10px;
+}
+
+.comparador th {
+    background-color: #222;
+    color: #fff;
+}
+
+#resultado {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.imagencamino img {
+    max-width: 220px;
+    height: auto;
+    border-radius: 150px;
+    box-shadow:0 5px 100px #ffffff;
 }
