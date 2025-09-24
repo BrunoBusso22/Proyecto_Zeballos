@@ -78,34 +78,39 @@
 
 </div> 
 <script>
-  const form = document.getElementById("formulario");
-  const resultado = document.getElementById("resultado");
+ document.getElementById("formulario").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+  const tamaño = document.getElementById("tamaño").value;
+  const complejidad = document.getElementById("complejidad").value;
+  const requisitos = document.getElementById("requisitos").value;
+  const entrega = document.getElementById("entrega").value;
+  const equipo = document.getElementById("equipo").value;
 
+  let recomendacion = "";
 
-    const tamaño = document.getElementById("tamaño").value;
-    const complejidad = document.getElementById("complejidad").value;
-    const requisitos = document.getElementById("requisitos").value;
-    const entrega = document.getElementById("entrega").value;
-    const equipo = document.getElementById("equipo").value;
+  if (tamaño === "pequeño" && complejidad === "baja" && requisitos === "claros" && entrega === "largo") {
+    recomendacion = "Te conviene usar Modelo en Cascada, porque el proyecto es simple, bien definido y no requiere cambios frecuentes.";
+  } 
+  else if ((tamaño === "mediano" || tamaño === "grande") && requisitos === "cambiantes" && (entrega === "corto" || entrega === "moderado")) {
+    recomendacion = "Te conviene usar Metodologías Ágiles, porque se adaptan bien a cambios de requisitos y entregas parciales.";
+  } 
+  else if (tamaño === "grande" && complejidad === "alta" && equipo === "grande") {
+    recomendacion = "Te conviene usar Modelo en Espiral, ya que es útil en proyectos grandes, riesgosos y complejos, con un equipo numeroso.";
+  } 
+  else if (tamaño === "mediano" && complejidad === "media" && requisitos === "inciertos") {
+    recomendacion = "Podrías usar un Modelo Incremental, ya que permite ir construyendo el sistema por partes y ajustarlo en el proceso.";
+  } 
+  else if (tamaño === "grande" && requisitos === "claros" && entrega === "largo") {
+    recomendacion = "Considerá el Modelo en V, porque asegura calidad y pruebas fuertes en proyectos grandes con requisitos bien definidos.";
+  } 
+  else {
+    recomendacion = "Podés combinar metodologías según las características de tu proyecto.";
+  }
 
-    let recomendacion = "";
+  document.getElementById("resultado").textContent = recomendacion;
+});
 
-  
-    if (tamaño === "pequeño" && complejidad === "baja" && requisitos === "claros") {
-      recomendacion = "Te conviene usar Modelo en Cascada";
-    } else if (tamaño === "mediano" && requisitos === "cambiantes") {
-      recomendacion = "Te conviene usar Metodología Ágil";
-    } else if (tamaño === "grande" && complejidad === "alta" && equipo === "grande") {
-      recomendacion = "Te conviene usar Modelo en Espiral";
-    } else {
-      recomendacion = "Podés combinar metodologías según tu proyecto.";
-    }
-
-    resultado.textContent = recomendacion;
-  });
 </script> 
 </body>
 </html>
