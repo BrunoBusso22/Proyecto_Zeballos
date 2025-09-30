@@ -4,8 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de calida de software</title>
+     <link rel="stylesheet" href="/stylesgestion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Gestion de calida de software</h1>
+    <nav>
+        <ul class="Lista">
+            <li><a href="/Inicio.html">Inicio</a></li>
+            <li><a href="desarrollo.html">Proceso de Desarrollo de Software</a></li>
+            <li><a href="recursos.html">Recursos y Aprendizaje</a></li>
+            <li><a href="comparador.html">Comparador<br> de Metodologias</a></li>
+            <li><a href="encuesta.html">Encuesta</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>    
+        </ul>
+
+
+
+    </nav>
+    <h1>Gestion de calidad de software</h1>
+
+    <div class="Info">
+        <div class="fundamentos">
+            <h2>Fundamentos</h2>
+                <p>
+                La calidad del software no es solo que el sistema “funcione”, también debe ser confiable, usable, eficiente, seguro y mantenible.<br>
+                Se habla de:
+                Calidad interna → aspectos técnicos: arquitectura, claridad del código, algoritmos correctos, mantenibilidad.
+                Calidad externa → experiencia del usuario: usabilidad, estabilidad, desempeño, seguridad, satisfacción.<br>
+                Para medir estas cualidades se usan métricas de calidad:
+                Confiabilidad (frecuencia de fallos).
+                Usabilidad (qué tan intuitivo es).
+                Eficiencia (uso de CPU, memoria, tiempos de respuesta).
+                Mantenibilidad (facilidad de modificar/actualizar).
+                Portabilidad (capacidad de funcionar en distintos entornos).
+                Seguridad (protección frente a accesos no autorizados o pérdida de datos).<br>
+                Normas internacionales:
+                ISO 9126: funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.
+                ISO/IEC 25000 (SQuaRE): amplía el modelo incorporando calidad en uso, evaluación de procesos y aseguramiento de calidad en todo el ciclo de vida.
+            </p>
+        </div>
+        <div class="Aseguramientos">
+            <h2>Tec. de Aseguramientos</h2>
+            <p>
+                Busca prevenir errores desde el inicio, no solo detectarlos al final.<br>
+
+                Incluye procesos, buenas prácticas y diferentes tipos de pruebas:
+
+                Funcionales → verifican requisitos específicos (ej. login correcto).
+
+                No funcionales → rendimiento, seguridad, compatibilidad.<br>
+
+                Niveles de prueba:
+
+                Unitarias (módulos pequeños).
+
+                Integración (interacción entre módulos).
+
+                Sistema (funcionamiento global).
+
+                Aceptación (validación final del cliente).<br>
+
+                Técnicas de prueba:
+
+                Caja negra → entradas/salidas, sin ver el código.
+
+                Caja blanca → análisis de la lógica interna del programa.
+
+                Basadas en experiencia → conocimiento de testers para anticipar errores.
+            </p>
+        </div>
+        <div class="Herramientas">
+            <h2>Herramientas de Calidad</h2>
+            <p>Gestión y planificación de pruebas: TestLink, Zephyr, qTest.
+
+            Registro y seguimiento de defectos: Jira, Bugzilla, MantisBT.
+
+            Análisis de calidad del código: SonarQube, Checkstyle, PMD.
+
+            Detectan vulnerabilidades, malas prácticas o problemas de estilo.  
+            </p>
+        </div>
+    </div>
 </body>
 </html>
