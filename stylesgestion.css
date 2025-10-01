@@ -60,3 +60,60 @@ ul li a:hover {
     background-color: rgba(0, 0, 0, 0.436);
     line-height: 1.6;
  }
+ li{
+   color: black;
+ }
+ .fundamentos ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.fundamentos li {
+    background: rgba(255,255,255,0.07);
+    color: #e0f7fa;
+    border-radius: 10px;
+    margin-bottom: 0;
+    padding: 16px 18px 16px 28px;
+    position: relative;
+    min-height: 80px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 20px;
+}
+
+.fundamentos li ul {
+    display: block;
+    background: none;
+    box-shadow: none;
+    padding-left: 18px;
+    margin-top: 10px;
+    gap: 0;
+}
+
+.fundamentos li ul li {
+    background: none;
+    color: white;
+    padding: 6px 0 6px 18px;
+    min-height: unset;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.fundamentos li::before {
+    color: #ffeb3b;
+    position: absolute;
+    left: 8px;
+    top: 18px;
+    font-size: 1.1rem;
+}
+
+.fundamentos ul ul li::before {
+    content: "•";
+    color: #00e5ff;
+    left: 0;
+    top: 8px;
+    font-size: 1.1rem;
+}
