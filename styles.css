@@ -103,3 +103,6 @@ ul li a:hover { background-color: rgb(255, 255, 255);
 .caja:hover a {
     color: #8c8c8c;
 }
+p{
+    letter-spacing: 1px;
+}
