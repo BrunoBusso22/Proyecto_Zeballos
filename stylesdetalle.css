@@ -1,0 +1,177 @@
+body{
+    background-image: url(imagenes/fondo.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    font-family: "Orbitron", sans-serif; 
+    font-optical-sizing: auto; 
+    font-weight: 400;
+    font-style: normal
+ } 
+ nav ul { list-style: none; 
+    font-size: 20px; 
+    display: flex; 
+    flex-direction: row; 
+    padding: 0; 
+    margin: 0; } 
+
+nav ul li { flex: 1; 
+    text-align: center; 
+    background-color: #ffffff; 
+} nav ul li a { color: black; 
+    text-decoration: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 80px; 
+    border: 2px solid #ffffff; 
+    transition: 0.2s; 
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7); 
+    font-size: 18px; 
+    font-weight: bold; }
+
+ nav ul li a:hover {
+    background-color: rgb(255, 255, 255); 
+    border-color: rgb(79, 83, 197); 
+    transform: scale(1.05); } 
+ nav h1{
+    color: #ffffff;
+    font-size: 65px;
+    line-height: 1.2;
+ }
+nav a{
+    text-decoration: none;
+    color: #ffffff;
+ }
+h1 {
+    color: #ffeb3b;
+    font-size: 65px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    padding-top: 150px;
+}
+
+.Info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    margin: 0 auto 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.scrum,
+.kanban {
+    background: linear-gradient(135deg, #1b2735 0%, #2980b9 100%);
+    color: #e0f7fa;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.25);
+    padding: 32px 28px;
+    border: 2px solid #13a5c2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.scrum:hover,
+.kanban:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 40px 0 rgba(44, 62, 80, 0.35);
+}
+
+.scrum h2,
+.kanban h2 {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+    color: #ffeb3b;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    border-bottom: 2px solid #13a5c2;
+    padding-bottom: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scrum ul,
+.kanban ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+}
+
+.scrum li,
+.kanban li {
+    background: rgba(255, 255, 255, 0.07);
+    color: #e0f7fa;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    padding: 16px 18px 16px 28px;
+    position: relative;
+    min-height: 60px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    font-size: 1.15rem;
+}
+
+.scrum li ul,
+.kanban li ul {
+    background: none;
+    box-shadow: none;
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.scrum li ul li,
+.kanban li ul li {
+    background: none;
+    color: #b2ebf2;
+    padding: 6px 0 6px 18px;
+    min-height: unset;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 1rem;
+}
+
+.scrum li::before,
+.kanban li::before {
+    color: #ffeb3b;
+    position: absolute;
+    left: 8px;
+    top: 18px;
+    font-size: 1rem;
+}
+
+.scrum ul ul li::before,
+.kanban ul ul li::before {
+    content: "•";
+    color: #00e5ff;
+    left: 0;
+    top: 8px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    .Info {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 6px;
+    }
+    .scrum,
+    .kanban {
+        padding: 18px 8px;
+    }
+    .scrum h2,
+    .kanban h2 {
+        font-size: 1.3rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
